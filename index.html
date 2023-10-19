@@ -1,115 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form fillup</title>
-  <style>
-    .formdesign input {
-      width: 40%;
-      padding: 8px 20px;
-      margin: 14px;
-      font-size: 15px;
-    }
-   
-    .but {
-      border-radius: 9px;
-      width: 100px;
-      height: 50px;
-      font-size: 25px;
-    }
-    .formerror {
-      color: red;
-    }
-    .heading {
-    border: 2px solid red;
-    /* padding-left: 100px;
-    margin-top: 100px; */
-    text-align: center;
-    }
-    #nameError {
-      color: green;
-    }
-    .text {
-      background-color: red;
-    }
-    .text:hover {
-      background-color: green;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./s.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>FirstProject</title>
+    <h1>Gausul Wara Imam</h1>
+    contact:  <a href="https://mail.google.com/mail/u/0/#inbox">www.email.com</a>
+    <p>twitter: <a href="https://twitter.com/GausulWara3363">www.twitter.com</a></p>
+    <p>linkedin: <a href="https://www.linkedin.com/feed/">www.linkedin.com</a></p>
 </head>
 <body>
-  <h1 class = "heading">Fill the form confidently</h1>
-  
-  <form name="myForm" onsubmit="return validateForm()">
-    <div class="formdesign" id="name">
-      Name: <input type="text" name="fname"> <span class="formerror" id="nameError"></span>
-    </div>
-    <div class=" text">hello jhuihi</div>
-    <h1 class=" text">hello</h1>
-    <span class=" text">hello my name is </span>
-    
-    <div class="formdesign" id="phone">
-      Phone: <input type="number" name="fphone"> <span class="formerror" id="phoneError"></span>
-    </div>
+    <fieldset>
+        <legend>Easy search</legend>
+    <table>
+        <tr>
+            <td>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#achiev">Achievements</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#sandv">song and video</a></li>
+                <li><a href="#handv">hostel Vlog</a></li>
+                <li><a href="#youtube2">Youtube Videos</a></li>
+                <li><a href="#freq">F&Q</a></li>
+            </td>
+        </tr>
+    </table>
+    </fieldset><br>
+    <section id="intro">
+    <table>
+        <tr>
+            <td><img src="h.JPG" alt="gausul wara imam" width="100" height="100"></td>
+            <td> <p> I am a passonate blockchain developer with high problem solving skill. 
+                i am real time vlogger also , i clicked picture and videos immediately when feels that it is very important
+                so that people knoe the exact point and matter what happen at that time.
+                As a vollyball player my role is to spike a ball under the nine meter ground.</p></td>
+        </tr>
+    </table>
+</section>
+    <br>
+    <section id="education">
+    <h2>Education</h2>
+    <p>* Curently i am doing my Bachelor Degree from Khwaja Moinuddin Chishti Language University</p>
+    <p>* My senior secondry from Sterling PUblic School</p>
+    <h2>Work Experience</h2>
+    <h3><u>Blockchain Developer</u></h3>
+    <p>I worked as blockchain developer in Blackrock, Delhi <br>   Nov 2022, June2023 <br> # developed Smart Contarct using Solidity <br> # making Dapps using concept of etherium</p>
+    </section>
+    <section id="skill">
+    <h2>Skills</h2>
+    <ul>
+    <li>java</li>
+    <li>c++</li>
+    <li>Javascript</li>
+     <li><b>Solidity </b></li>
+     <li> HTML</li>
+     <li>CSS</li>
+     <li>SQL</li>
+</ul></section>
+<section id="achiev">
+<h3>Achievements</h3>
+<ul>
+    <li>All Inter University vollyball tournament, Dec 2022</li>
+    <li>2nd Rank in debait competetion on the topic media and communication, March 2022</li>
+    <li>3rd Rank in Extempore competion, oct 2023</li>
+</ul></section>
+<section id="projects">
+<h3>Projects</h3>
 
-    <div class="formdesign" id="password">
-      Password: <input type="password" name="fpass"> <span class="formerror" id="passError"></span>
-    </div>
-
-    <div class="formdesign" id="email">
-      Email: <input type="email" name="femail"> <span class="formerror" id="emailError"></span>
-    </div>
-
-    <input class="but" style = "background-color: yellow;" type="submit" value="Submit">
-  </form>
-
-  <script>
-    function validateForm() {
-      var name = document.forms['myForm']["fname"].value;
-      var phone = document.forms['myForm']["fphone"].value;
-      var email = document.forms['myForm']["femail"].value;
-      var pass = document.forms['myForm']["fpass"].value;
-
-      var status = true;
-
-      if (name.length <= 3) {
-        var error = document.getElementById("nameError");
-        error.textContent = "Invalid name";
-        status = false;
-      } else {
-        var error = document.getElementById("nameError");
-        error.textContent = "";
-      }
-
-      if (phone.length !== 10) {
-        var pherror = document.getElementById("phoneError");
-        pherror.textContent = "Invalid phone";
-        status = false;
-      } else {
-        var pherror = document.getElementById("phoneError");
-        pherror.textContent = "";
-      }
-
-      if (pass.length <= 8) {
-        var perror = document.getElementById("passError");
-        perror.textContent = "Password must be at least 8 characters long";
-        status = false;
-      } else {
-        var perror = document.getElementById("passError");
-        perror.textContent = "";
-      }
-
-      if (status) {
-        console.log("name is valid");
-        console.log(name);
-        console.log(phone);
-        console.log(email);
-        console.log(pass);
-      }
-
-      return status;
-    }
-  </script>
+    <u><b>Student Id Card Generator </b> </u>
+    <li>make a unique id card generator website using java and html and css for our college
+    </li><br>
+    <u><b>Simple Website</b></u>
+   <li>a simple website with the help of html and css and javascript</li>
+</section>
+<section id="sandv">
+<table> <h1><u> songs & vlogs </u></h1>
+    <tr>
+        <td>
+            <audio src="audio.mp3" controls id="song"></audio><br>
+            <label for="song">......Tumsa koi pyara song mp3</label>
+        </td>
+        <td><video src="video1.mp4" height="300" controls id="video"></video><br>
+            <label for="video">.......Malaika Mam</label>
+        </td>
+        
+        <td></td>
+    </tr>
+</table>
+</section>
+<section id="handv">
+    <h3>Hostel vlogs</h3>
+    <video src="dancevieo.mp4" height="300" id="v2" controls></video><br>
+    <label for="v2">......birthday in hostel </label>
+</section>
+<section id="youtube2">
+    <h3>Youtube video </h3>
+    <iframe src="https://www.youtube.com/embed/5RaxhCvvhfk" controls ></iframe >
+</section>
+<section id="freq">
+<h3>Frequently asked question ?</h3>
+<details>
+    <summary>Q1: How can i reset my password ?</summary>
+    <p>You can click on forgot password and fill required detail and submit.</p>
+</details>
+<details>
+    <summary>Q1: How can i become rich ?</summary>
+    <p>I'm really Sorry, if i know then i'm not here to make website.  </p>
+</details>
+<details>
+    <summary>Q1: what size should be the resume to be upload ?</summary>
+    <p>You can upload between 100kb to 1mb, but ensure that file in pdf formate.</p>
+</details>
+</section>
 </body>
+<footer>
+    <p>&#169; 2023 khurram ali, All right reserve  </p>
+</footer>
 </html>
