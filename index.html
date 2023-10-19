@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form fillup</title>
+  <style>
+    .formdesign input {
+      width: 40%;
+      padding: 8px 20px;
+      margin: 14px;
+      font-size: 15px;
+    }
+   
+    .but {
+      border-radius: 9px;
+      width: 100px;
+      height: 50px;
+      font-size: 25px;
+    }
+    .formerror {
+      color: red;
+    }
+    .heading {
+    border: 2px solid red;
+    /* padding-left: 100px;
+    margin-top: 100px; */
+    text-align: center;
+    }
+    #nameError {
+      color: green;
+    }
+    .text {
+      background-color: red;
+    }
+    .text:hover {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1 class = "heading">Fill the form confidently</h1>
+  
+  <form name="myForm" onsubmit="return validateForm()">
+    <div class="formdesign" id="name">
+      Name: <input type="text" name="fname"> <span class="formerror" id="nameError"></span>
+    </div>
+    <div class=" text">hello jhuihi</div>
+    <h1 class=" text">hello</h1>
+    <span class=" text">hello my name is </span>
+    
+    <div class="formdesign" id="phone">
+      Phone: <input type="number" name="fphone"> <span class="formerror" id="phoneError"></span>
+    </div>
+
+    <div class="formdesign" id="password">
+      Password: <input type="password" name="fpass"> <span class="formerror" id="passError"></span>
+    </div>
+
+    <div class="formdesign" id="email">
+      Email: <input type="email" name="femail"> <span class="formerror" id="emailError"></span>
+    </div>
+
+    <input class="but" style = "background-color: yellow;" type="submit" value="Submit">
+  </form>
+
+  <script>
+    function validateForm() {
+      var name = document.forms['myForm']["fname"].value;
+      var phone = document.forms['myForm']["fphone"].value;
+      var email = document.forms['myForm']["femail"].value;
+      var pass = document.forms['myForm']["fpass"].value;
+
+      var status = true;
+
+      if (name.length <= 3) {
+        var error = document.getElementById("nameError");
+        error.textContent = "Invalid name";
+        status = false;
+      } else {
+        var error = document.getElementById("nameError");
+        error.textContent = "";
+      }
+
+      if (phone.length !== 10) {
+        var pherror = document.getElementById("phoneError");
+        pherror.textContent = "Invalid phone";
+        status = false;
+      } else {
+        var pherror = document.getElementById("phoneError");
+        pherror.textContent = "";
+      }
+
+      if (pass.length <= 8) {
+        var perror = document.getElementById("passError");
+        perror.textContent = "Password must be at least 8 characters long";
+        status = false;
+      } else {
+        var perror = document.getElementById("passError");
+        perror.textContent = "";
+      }
+
+      if (status) {
+        console.log("name is valid");
+        console.log(name);
+        console.log(phone);
+        console.log(email);
+        console.log(pass);
+      }
+
+      return status;
+    }
+  </script>
+</body>
+</html>
